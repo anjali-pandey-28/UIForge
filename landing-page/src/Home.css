@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  color: white;
+}
+
+.logo {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+}
+
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #00f2fe;
+  transition: width 0.3s;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 15px auto 25px;
+}
+
+.btn1 {
+  padding: 12px 25px;
+
+  width: 300px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #111;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.btn2 {
+  padding: 12px 25px;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 10px;
+
+  width: 300px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+
+  color: black;
+  background: #ffffff;
+}
+
+.btn1:hover,
+.btn2:hover {
+  color: black;
+  background: #ffffff;
+  transform: scale(1.025);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 60px 30px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  /* SHOW MENU WHEN CHECKED */
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+}
